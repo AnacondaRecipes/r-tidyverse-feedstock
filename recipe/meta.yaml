@@ -22,6 +22,7 @@ source:
 build:
   # If this is a new build for the same version, increment the build number.
   number: 0
+  noarch: generic
 
   # This is required to make R link correctly on Linux.
   rpaths:
@@ -31,6 +32,8 @@ build:
 # Suggests: feather (>= 0.3.1), knitr (>= 1.17), rmarkdown (>= 1.7.4)
 requirements:
   build:
+
+  host:
     - r-base
     - r-broom >=0.4.2
     - r-cli >=1.0.0
