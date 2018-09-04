@@ -8,7 +8,6 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: tidyverse_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/tidyverse_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tidyverse/tidyverse_{{ version }}.tar.gz
@@ -27,6 +26,7 @@ build:
 # Suggests: feather (>= 0.3.1), knitr (>= 1.17), rmarkdown (>= 1.7.4)
 requirements:
   build:
+    - {{posix}}zip               # [win]
 
   host:
     - r-base
